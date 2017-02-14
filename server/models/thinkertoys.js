@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('Thinkertoys', {
-  name: String
-});
+var userData = new mongoose.Schema({
+  name: String,
+  data: String
+})
+
+module.exports = mongoose.model('Thinkertoys', userData);

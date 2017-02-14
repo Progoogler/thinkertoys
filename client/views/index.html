@@ -1,38 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="thinkertoyApp">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/stylesheet.css">		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
+	
 		<div class="container">
-		  <div class="jumbotron text-center">
-		    <h1>ThinkerToy PlayPen</h1> 
-		    <p></p> 
+		  <div id="header" class="jumbotron text-center">
+		    <h1>ThinkerToy Playground</h1> 
+		    <img id="toybox" class="dropdown" src="/assets/toybox.jpg" alt="A box with toys inside">
+		    <select id="toy-menu">
+		    	<option>Welcome</option>
+		    </select>
+		    <img id="toybox2" class="dropdown" src="/assets/toybox2.jpg" alt="A box with toys inside">
+		    <img id="toybox3" src="/assets/toybox3.jpg" alt="A box with toys inside">
+		    <select id="text-menu">
+		    	<option id="save">Save current session</option>
+		    	<option id="load">Load previous session</option>
+		    </select>
 		  </div>
 		</div>		
 
 		<div id="toy-button" class="text-center">
 			<button class="btn btn-primary btn-lg" type="submit">New ThinkerToy</button>
 		</div>
-		<div id="toy-title">
 
-		</div>
 
 		<div class="row">
-		  <div class="col-sm-6 text-center">COLUMN ONE</div>
-		  <div class="col-sm-6 text-center">COLUMN TWO</div>
+		  <div id="toy-container" class="col-sm-6">
+		  	<img id="spin-toy" src="/assets/spinning-toy.jpg" alt="One of those toys that spin with a finger twist">
+		  	<div id="toy-title" class="text-center">Welcome to the ThinkerToy Playground!</div>
+		  	<div id="toy-description">
+		  		ThinkerToys are creative thinking techniques that challenges your brain
+		  		to think outside of your normal perspectives in order to find new ideas
+		  		that may provide solutions to your existing problems. Or if you're like me,
+		  		to find existing problems and then look for solutions! 
+		  	</div>
+		  	<div id="toy-preface">
+		  		<br>
+		  		These tools for inspiring fresh outlooks are easy to use and fun to apply
+		  		to any challenging aspect of our daily lives whether in school, work, or play.
+		  		The key is to understand our challenge first - to state clearly exactly what is
+		  		our goal, and then to write it down so we don't forget! That is what the 
+		  		text box is for, to record any and every flow of thought that enters our head
+		  		as we are <em>playing</em> with a ThinkerToy. 
+		  	</div>
+		  	<div id="toy-blueprint">
+		  		<br>
+		  		Notice I emphasized playing. This is a ThinkerToy <em>play</em>ground and we
+		  		come here to have fun with a productive mindset. Creativity can only spark within
+		  		us when we're in <em>flow</em> with our environment and our <em>in</em>vironment..
+		  		So drop all your worries, click up a toy, and enjoy!
+		  	</div>
+		  </div>
+		  <div id="text-container" class="col-sm-6 text-center">
+		  	<textarea name="textarea"></textarea>
+		  </div>
 		</div>
 
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 		<script type="text/javascript" src="/js/app.js"></script>
+		<script type="text/javascript" src="/js/main.js"></script>
 		<script type="text/javascript" src="/js/jquery.js"></script>
+		<script type="text/javascript" src="/js/controllers/thinkertoy-controller.js"></script>
 	</body>
 </html>
