@@ -71,8 +71,16 @@
 
   	<script type="text/javascript" src="/../js/portals/ckeditor/ckeditor.js"></script>
   	<script>
-  		CKEDITOR.replace( 'textarea' )
-  			.config.height = '20em';
+	    var placeholderStyle = '<br /><br /><br /><br /><br /><br /><br /><br />';
+	    for (var num = 0; num < 70; num++) placeholderStyle += '&nbsp';
+	    var config = {};
+	    config.height = '28em';
+	    config.extraPlugins='confighelper';     
+	    config.placeholder = placeholderStyle + 'Think play..';
+	    config.allowedContent = true;
+	    config.extraAllowedContent = 'h2{onclick}'
+	    config.removeDialogFields='image:info:txtBorder';
+	    CKEDITOR.replace( 'editor', config );
   	</script>
 
 		<script type="text/javascript" src="/js/app.js"></script>
