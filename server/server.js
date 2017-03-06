@@ -10,6 +10,10 @@ mongoose.connect('mongodb://localhost:27017/ThinkerToys');
 
 app.use(bodyParser());
 
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/client/views/index.html');
 });
