@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="thinkertoyApp">
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <div ng-controller="thinkertoyController">
+    <div class="container">
+      <div id="header" class="jumbotron text-center">
+        <h1><span class="blue">Thinker</span><span class="yellow">Toy</span> <span class="red">Playground</span></h1> 
+        <img id="toybox" class="dropdown" src="/../toybox.jpg" alt="A box with toys inside">
+        <select id="toy-menu">
+          <option>Welcome</option>
+        </select>
+        <img id="toybox2" class="dropdown" src="/../toybox2.jpg" alt="A box with toys inside">
+        <img id="toybox3" src="/../toybox3.jpg" alt="A box with toys inside">
+        <form ng-submit="checkOption() ? saveThinkertoy() : loadThinkertoy()">
+          <select id="text-menu">
+            <option id="save" selected>Save current session</option>
+            <option id="load">Load previous session</option>
+          </select>
+          <input id="editor-button" class="btn btn-default" type="submit" value="submit">
+        </form>
+
+      </div>
+    </div>    
+
+    <div id="toy-button" class="text-center">
+      <button class="btn btn-primary btn-lg random-button" type="submit">New ThinkerToy</button>
+    </div>
+
+
+    <div class="row">
+      <div id="toy-container" class="col-sm-6">
+        <img id="spin-toy" src="/../spinning-toy.jpg" alt="One of those toys that spin with a finger twist">
+        <div id="toy-title" class="text-center">Welcome to the ThinkerToy Playground!</div>
+        <div id="toy-description" class="toy-text">
+          ThinkerToys are creative thinking techniques that challenges our brains
+          to think outside of the box in order to seek new ideas
+          that may provide solutions to our existing problems. Or if you like,
+          to find existing problems and then look for different solutions! 
+        </div>
+        <div id="toy-preface" class="toy-text">
+          <br>
+          These tools for inspiring fresh outlooks are easy to use and fun to apply
+          to any challenging aspect of our daily lives whether in school, work, or play.
+          The key is to understand our challenge first - to state clearly exactly what is
+          our goal, and then to write it down so we don't forget it! That is what the 
+          text editor is for, to record any and every flow of thought that enters our mind
+          as we are <em>playing</em> with a ThinkerToy. 
+        </div>
+        <div id="toy-blueprint" class="toy-text">
+          <br>
+          Notice I emphasized playing. This is a ThinkerToy <em>play</em>ground and we
+          come here to have fun with a playful and productive mindset. Creativity can only spark within
+          us when we're in <em>flow</em> with our environment and our <em>in</em>vironment..
+          So drop all your worries, click up a toy and enjoy!
+        </div>
+      </div>
+      <div id="text-container" class="col-sm-6 text-center">
+        <textarea name="editor" ng-model="data.text"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="gradient-background"></div>
+
+  <footer>
+    <div class="footnote top-footnote">Thinkertoys is a book written by Michael Michalko that explains the operations and applications of different creative thinking techniques. The book is highly recommended as a toolkit for any kinds of businesses looking for growth and development. This website is here to provide an online reference to some of the creative techniques found in the book. If you haven't read the book, consider buying it by clicking on the book below or visiting your local library. </div>
+    <div class="footnote center-footnote"><a href="https://www.amazon.com/Thinkertoys-Handbook-Creative-Thinking-Techniques-2nd/dp/1580087736/ref=sr_1_1?ie=UTF8&qid=1488687391&sr=8-1&keywords=thinkertoys"><img src="/../thinkertoys-book.jpg"></a></div>
+    <div class="footnote bottom-footnote">No rights reserved. Play to your &#9829;'s desire.</div>
+  </footer>
+
+  <script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/node_modules/angular-resource/angular-resource.js"></script>
+  <script type="text/javascript" src='/node_modules/jquery/dist/jquery.min.js'></script>
+  <script type="text/javascript" src="/../js/portals/ckeditor/ckeditor.js"></script>
+  <script>
+
+    if (document.body.clientWidth >= 768) {
+      var placeholderStyle = '<br /><br /><br /><br /><br /><br /><br /><br />';
+      for (var num = 0; num < 65; num++) placeholderStyle += '&nbsp';
+    } else {
+      var placeholderStyle = '<br /><br /><br /><br /><br /><br /><br /><br />';
+      for (var num = 0; num < 40; num++) placeholderStyle += '&nbsp';      
+    }
+    var config = {};
+    config.height = '28em';
+    config.extraPlugins='confighelper';     
+    config.placeholder = placeholderStyle + 'Bend the universe..';
+    config.allowedContent = true;
+    config.extraAllowedContent = 'h2{onclick}'
+    config.removeDialogFields='image:info:txtBorder';
+    CKEDITOR.replace( 'editor', config );
+    
+  </script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/javascript" src="/js/app.js"></script>
+  <script type="text/javascript" src="/js/bundle.js"></script>
+  <script type="text/javascript" src="/js/controllers/thinkertoy-controller.js"></script>
+  <script type="text/javascript" src="/js/portals/sweetalert-master/dist/sweetalert.min.js"></script>
+</body>
+</html>
