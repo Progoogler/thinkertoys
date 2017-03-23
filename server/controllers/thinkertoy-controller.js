@@ -1,3 +1,1 @@
-var Thinkertoy = require('../models/thinkertoy');
-
-};
+// Refer to router.js

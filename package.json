@@ -1,10 +1,24 @@
 {
   "name": "thinkertoys",
-  "version": "1.0.0",
-  "description": "A set of creativity tools written by Michael Michalko which enhances problem solving abilities.",
+  "version": "0.2.5",
+  "description": "Creative thinking techniques for problem solving.",
+  "engines": {
+    "node": "5.9.1"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-resource": "^1.6.2",
+    "body-parser": "^1.16.0",
+    "cool-ascii-faces": "1.3.4",
+    "ejs": "2.4.1",
+    "express": "4.13.3",
+    "jquery": "^3.1.1",
+    "mongoose": "^4.8.1",
+    "msgpack-lite": "^0.1.26"
   },
   "repository": {
     "type": "git",
@@ -16,10 +30,10 @@
     "solving",
     "techniques"
   ],
-  "author": "Progoogler",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Progoogler/thinkertoys/issues"
-  },
-  "homepage": "https://github.com/Progoogler/thinkertoys#readme"
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "compass": "^0.1.1",
+    "node-sass": "^4.5.0"
+  }
 }
